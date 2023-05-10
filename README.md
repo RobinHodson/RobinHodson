@@ -15,6 +15,12 @@ If you want to support my work, please consider buying me a Beer etc 🍻
 <a href="https://www.linkedin.com/in/robinhodson">
 <img alt="LinkedIN" width="22" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/linkedin.svg" />
 </a>
+
+**Tests**
+
+In theory, my pages, including my CV, should be available on <a href="https://robinhodson.github.io/>robinhodson.github.io</A>, fairly shortly.
+If I'm very lucky, I might get an index page striaghtaway.
+
 <!--
 **RobinHodson/RobinHodson** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
