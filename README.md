@@ -18,7 +18,7 @@ If you want to support my work, please consider buying me a Beer etc 🍻
 
 **Tests**
 
-In theory, my pages, including my CV, should be available on <a href="https://robinhodson.github.io/>robinhodson.github.io</A>, fairly shortly.
+In theory, my pages, including my CV, should be available on <a href="https://robinhodson.github.io/">robinhodson.github.io</A>, fairly shortly.
 If I'm very lucky, I might get an index page striaghtaway.
 
 <!--
