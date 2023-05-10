@@ -30,7 +30,7 @@ In theory, my pages, including my CV, should be available on <a href="https://ro
 - 👯 I’m looking to collaborate on getting an in-person OSHW meet-up running. Looks like we *might* have a test on Wednesday 17th May.
 - 🤔 I’m looking for help with getting a Job (idealy logic design, but can do php/javascript/LAMP or 3D stuff).
 - 💬 Ask me about anything that seems out, about these pages.
-- 📫 How to reach me: about.me/robin.hodson covers all the main areas.
+- 📫 How to reach me: https://about.me/robin.hodson covers all the main areas.
 - 😄 Pronouns: Oi/you seems to be most popular. Although a close second is, "Sorry, I thought you were a hallucination". 'Not sure how to take that.
 - ⚡ Fun fact: I'm acting chair of the Bristol World Naked Bike Ride, this year.
 
