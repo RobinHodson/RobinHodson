@@ -18,8 +18,8 @@ If you want to support my work, please consider buying me a Beer etc 🍻
 
 **Standard sections**
 
-In theory, my pages, including my CV, should be available on <a href="https://robinhodson.github.io/">robinhodson.github.io</A>, fairly shortly.
-If I'm very lucky, I might get an index page striaghtaway.
+In theory, my pages, including my CV, should be available on <a href="https://robinhodson.github.io/RobinHodson/">robinhodson.github.io/RobinHodson/</A>, now.
+getting an index page working, took a bit of faffing around though.
 
 <!--
 **RobinHodson/RobinHodson** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
