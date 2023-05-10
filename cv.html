@@ -1,0 +1,1089 @@
+
+<!DOCTYPE html>
+<html lang="en-GB"><head>
+<!--Scripting tests via name "/svg/tgv##.htm"-->
+<!--From svg19.htm, with db17.htm and numerous others;
+ write as "/code/combo.htm", while under test; "/code/index.htm" live version.-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="data:image/gif;base64,R0lGODlhEAAQAPMAADM1M0OtO9qzCjuIOkjzQTZTNrbaGmteJZK6I/7LAIRxH2lnamlnamlnamlnamlnaiwAAAAAEAAQAAAETBDISau9NikQiP8eJRheMJyngVCHV1RKclCdYQlC5WlUPFOEAU6U0w0OPIDPQggAhs9ipVNAKpYXFw56KXwMBhPq0gF9MJKCWo1uRwAAOw==">
+<title>Coding CV</title>
+<style>
+
+html,body{padding:0;margin:0;width:100%;height:100%;scroll-behavior:smooth}
+body{font-size:12pt;font-family:arial,sans-serif}
+div,header,footer,main,section{box-sizing:border-box}
+header,footer{padding:.5em;margin:0}
+h1{text-align:left;margin-top:0;}
+h1::before{content:'\00a0 ';}
+abbr{text-decoration:none}
+.bigbold{font-size:1.5em;font-weight:bold;color:#400}
+.illustrative{border:solid 4px #ddd;margin-bottom:4px}
+[title]{cursor:help}
+th{text-align:right;padding-right:1em}
+#space th,#space td{padding-bottom:1em}
+#squeeze{margin-top:-1em}
+#h1{margin-top:0}
+h3{display:none;margin-top:0} /* WAI Fudge */
+
+/* WAI/hide interactive elements from non-compliant user agents: */
+noscript{margin:.5em}
+#hide1,#hide2,#hide3{display:none;margin:0;padding:0;border:none}
+
+/* New bullet styles: */
+li::marker {font-size:1.5em}
+      ul li::marker{content:'\2605\00a0';color:#40c}
+   ul ul li::marker{content:'\2734\00a0';color:#604}
+ul ul ul li::marker{content:'\2666\00a0';color:#044}
+
+#dec1,#dec2{font-weight:bold;color:red}
+#asc1,#asc2{font-weight:bold}
+.output{border:inset 3px #ccc;border-radius:10px;padding:5px;text-align:center}
+.asc{font-size:96px} /*6em*/
+.dec{width:48px} /*3em*/
+
+#buttspace button{margin:0 2px}
+
+.unfloat{clear:both}
+.null{margin:0;padding:0}
+
+/* Arrow/ampersand: */
+.overall{fill-rule:evenodd;stroke:none;fill:#fff}
+.arrcol{fill:#666}
+#fillthis{border:solid #008 2px;margin:0;padding:0;width:200px}
+.arramp{margin:0;padding:0}
+.vmid{align-self:center;text-align:center}
+
+div.floats{width:150px;float:left;padding:0}
+/*div.floats{border:solid 2px #888}*/
+
+/* SVG text anti-selection kit: */
+svg text,.output{
+-webkit-touch-callout:none;
+-webkit-user-select:none;
+-khtml-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+-o-user-select:none;
+user-select:none;pointer-events:none;
+-webkit-tap-highlight-color:#fff0;
+cursor:default;fill:transparent}
+svg text::selection,.no-sel::selection{background:none;fill:transparent}
+svg text::-moz-selection,
+ .no-sel::-moz-selection{background:none;fill:transparent}
+button::selection{background:none;fill:transparent}
+
+/* mobile Accessibility kit: */
+button,input{font-size:1.6em}
+input,button{border:outset 3px #888}
+input:active,button:active{border-style:inset}
+input,button{background:#eee;padding:0 4px;border-radius:5px}
+
+/* Circuit styling: */
+.gates{stroke-width:2;stroke:#000}
+g.gates circle{fill:none;stroke:#000}
+g.wjb{fill:none;stroke:#000;stroke-width:2}
+g.wjb>path{stroke-width:6;stroke:#fff}
+g.wjb g circle{fill:#000;stroke:none}
+text{font-family:Verdana,sans-serif;font-size:25px;fill:#888}
+
+
+/* Button row: */
+#circuit{float:left}
+#circuit{margin:0 1em}
+
+/* Button board: */
+.btk text,.btq text,.btq rect
+ {font-family:Verdana,sans-serif;font-size:50px;cursor:not-allowed}
+.btk text{fill:#2a2}
+.btk rect{stroke-width:2;fill:#dfd;stroke:#6a6} /* Grn off */
+.btq text{fill:#c90}
+.btq rect{stroke-width:2;fill:#ffb;stroke:#aa6} /* Yel off */
+
+#x7,#x6,#x5,#x4,#x3,#x2,#x1,#x0{fill:#0000}
+
+/* Fairly messy range styler: */
+#rangeslider{margin:0;height:60px;border:none}
+#rangeslider::-webkit-slider-thumb
+{border:1px solid #000;height:36px;width:16px;background:#ccf;cursor:pointer;
+-webkit-appearance:none;
+-moz-appearance:none;
+appearance:none;margin-top:-7px}
+#rangeslider::-moz-range-thumb
+{border:1px solid #000;height:36px;width:16px;background:#ccf;cursor:pointer}
+#rangeslider::-ms-thumb
+{border:1px solid #000;height:36px;width:16px;background:#ccf;cursor:pointer}
+
+#rangeslider{
+-webkit-appearance:none;
+-moz-appearance:none;
+appearance:none;width:100%;height:60px;
+padding:0;margin:0;background-color:#fff;
+background-image:linear-gradient(to right,
+#b08,      #b08 12.5%,
+#eee 12.5%,#eee 25.1%,
+#eeb 25.1%,#eeb 37.6%,
+#eee 37.6%,#eee 49.8%,
+#b08 49.8%,#b08 50.2%,
+#00d 50.2%,#00d 62.7%,
+#007 62.7%,#007 100%)}
+
+
+/** This completely replaces the CSSplay Legoland layout: **/
+
+h1,h2,h3{color:#2ab}
+section h2{margin-top:0}
+header,footer{background:#fff;color:#000}
+section div{background:#fff}
+
+main{display:flex;flex-flow:row wrap}
+main{margin:0;padding:0;width:100%}
+section{width:100%}
+section{min-height:150px;min-width:150px}
+section{padding:0;margin:0}
+section div{border:none 2px #008;border-radius:10px;
+/* https://getcssscan.com/css-box-shadow-examples #14 by Stripe: */
+box-shadow:
+ #3364 0 50px 100px -20px,
+ #0004 0 30px 60px -30px,
+ #1245 0 -2px 6px 0 inset;
+
+padding:.5em;margin:0}
+
+
+/* Halfsize alts here:*/
+/* Grid layouts: */
+#ar1{margin-left:4px;width:45px}
+.wcv{display:grid;width:224px;grid-template-columns:85px 52px 85px}
+.wdc{display:grid;width:120px;grid-template-columns:39px 42px 39px}
+.asc{font-size:48px} /*3em*/
+#topbox{width:240px}
+div.floats{margin:5px}
+.hintbox{padding-left:0}
+#circuit{margin:0}
+#ar2{width:17px;margin-left:7px}
+
+@media only screen and (max-width:480px){
+#db li{font-size:.85em}
+}
+
+@media only screen and (min-width:640px){
+section{width:50%}
+section div{padding:.5em;margin:.5em .5em}
+}
+
+@media only screen and (min-width:800px){
+main{min-width:800px;max-width:1000px;margin-left:auto;margin-right:auto}
+section{width:33.33%}
+
+
+/* js vars fr circuit resizing, (must be in px) */
+/* Stndsize "defaults" here:*/
+#ar1{margin-left:8px;width:90px}
+.wcv{display:grid;width:447px;grid-template-columns:171px 105px 171px}
+.wdc{display:grid;width:160px;grid-template-columns:52px 45px 52px}
+.asc{font-size:96px} /*6em*/
+#topbox{width:480px}
+div.floats{margin:10px}
+.hintbox{padding-left:20px}
+#circuit{margin:0 .5em}
+#ar2{width:34px;margin-left:0}
+}
+
+@media only print{
+/* Border around rangeslider: */
+#rangeslider{border:solid 2px #008}
+
+/* All wires + joins to black: */
+.wjb g path{stroke:#000 !important}
+.wjb g circle{fill:#000 !important}
+.gates{fill:#eeb}
+
+/* Plainer section borders: */
+section div{box-shadow:none;border-style:solid;break-inside:avoid;margin:5px 0}
+/* Bits irrelevant to the paper version: */
+.omit{display:none}
+}
+
+#sa1,#sa2{margin:0;padding:0;border:solid red 8px;border-radius:20px}
+#sa1{border-color:#4f4;background-color:#4f4}
+#sa2{border-color:#fc0;background-color:#fc0}
+
+
+/* Rainbow diversity highlight trick: */
+span.r1::selection{background:#f10} span.r1::-moz-selection{background:#f10}
+span.r2::selection{background:#fa0} span.r2::-moz-selection{background:#fa0}
+span.r3::selection{background:#de0} span.r3::-moz-selection{background:#de0}
+span.r4::selection{background:#7f0} span.r4::-moz-selection{background:#7f0}
+span.r5::selection{background:#0ea} span.r5::-moz-selection{background:#0ea}
+span.r6::selection{background:#09f} span.r6::-moz-selection{background:#09f}
+span.r7::selection{background:#51f} span.r7::-moz-selection{background:#51f}
+span.r8::selection{background:#70f} span.r8::-moz-selection{background:#70f}
+span.r9::selection{background:#e0d} span.r9::-moz-selection{background:#e0d}
+
+/* Skills list (inline UL) : */
+.inline{list-style:none;margin-left:-.5em;margin-right:-.5em;padding-left:0}
+
+.inline>li{display:inline-block;
+margin-left:.5em;margin-right:.5em;
+margin-top:.25em;padding:.125em .25em;border-radius:.25em;
+border:solid #cc0 1px;background:#ffc;color:#300} /* default */
+/*-- (datalink Now sets up a palette for me) */
+.inline a{text-decoration:none}
+
+/* Workaround: Prevent webkit from removing list semantics: */
+.inline>li:before {content:"\200B";position:absolute}
+
+/* SOME NEW STYLES: */
+.no-bullets,.no-bullets li::marker{list-style:none;content:''}
+#sl1 UL,#sl2 UL,#sl3 UL,#sl4 UL{display:none}/* Hide everything - js will reveal if ness. */
+
+/* Default Key-BUTTONs: */
+.no-bullets li BUTTON{margin-top:4px;background:#eeb;border-color:#eeb}
+
+#ky1,#ky2,#ky3,#ky4{background:none;border:none;color:#000} /* For some reason, only this works. */
+
+/* Former inline styles: */
+#suprange{width:45%}
+#rangeslider{width:95%}
+#supbts{width:160px}
+#supwdc{width:165px}
+#hide2{width:100px;margin-top:0}
+
+</style><script>
+
+"use strict";
+
+// Variable initialisation
+
+// For common id Ref cache:
+let RSid,AMid,ARid,D1id,D2id,G2id,CRid,SZid;
+let SFid=[];let NNid=[];let FFid=[];let OOid=[];
+let GGid=[];let LHid=[];let ASid=[];
+let id_cir,id_flour;
+
+let tgq=[];let tgk=[];
+for(let i=0;i<8;i++)
+ {tgq[i]=false;tgk[i]=false}
+const pow=[1,2,4,8,16,32,64,128];
+
+// For common id Ref cache: (datalink)
+let CurrButt=0;
+let SLid=[];let DBid=[];let DBnm=[];
+DBnm[1]=[];DBnm[2]=[];DBnm[3]=[];DBnm[4]=[];
+let BCpe=[];let BGpe=[];let COpe=[];
+let BUid=[];
+// Initialise 2D arrays: (datalink)
+for(let i=1;i<5;i++){BCpe[i]=[];BGpe[i]=[];COpe[i]=[]}
+
+// Pixel values for circuit zoom sizes.
+// (Currently defined here, as for accidental midway range - good for both!)
+let Small_size=200;
+let Large_size=340;
+
+// Current palette:
+// Green Background/Foreground off/on
+const GBoff="#dfd";const GFoff="#2a2";
+const GBon ="#4f4";const GFon ="#040";
+// Yellow Background/Foreground off/on
+const YBoff="#ffb";const YFoff="#c90";
+const YBon ="#fc1";const YFon ="#430";
+// Wires off/on
+const WIoff="#000";const WIon ="#0b0";
+
+// Rangeslider logic; ASCII char codes.
+let offset=[64,0,0,0,-64,-128,-128,-128];
+let bkc=["#b08","#eee","#eeb","#eee","#00d","#007"];
+let fgc=["#eeb","#060","#000","#720","#eeb","#0bf"];
+let hint=["Ctrl char","Numeric","Uppercase","Lowercase","Upperbit-set (ctrl)","Upperbit-set"];
+
+
+// Gate states:
+let gg1,gg2,gg3,gg4,gg5,gg6;
+// Setup the initial state of the input buttons:
+const TextIn="C";
+const StartChar=TextIn.charCodeAt(0);
+
+// Which charecter the Flourish triggers for.
+const FlourishTrigger="R".charCodeAt(0);
+const FlourishChar=FlourishTrigger
+let isAmp=!(StartChar===FlourishChar); // Oddly has to be the inverse intially,
+ // so the intial check fails, and the damn thing (ampersand or arrow)
+ // appears in the first place!
+
+
+function ChWire(Which,TF){
+let s=(TF)?WIon:WIoff;
+let c=SFid[Which].children;
+for(let e of c)
+{if(e.tagName==="path") e.style.stroke=s;
+ if(e.tagName==="circle") e.style.fill=s}
+}
+
+
+function ActIn(n){
+// Toggle input indicators
+let tm=!tgk[n];tgk[n]=tm;
+Set_in(n,tm);
+let tDec=0;
+for(let i=0;i<8;i++)
+ tDec+=tgk[i]*pow[i];
+RSid.value=tDec;
+RangeUpdate();
+}
+
+
+function Set_in(Which,TFa){
+let vb=NNid[Which];
+let vt=FFid[Which];
+let TF=(TFa>0); // Ensure TF is boolean. Because of the way it's called, this IS essential.
+// Set corresponding wire sF(n) for SVG button k(n)
+ChWire(Which,TF);
+tgk[Which]=TF;
+if(TF)
+{vb.style.fill=GBon; vt.textContent="1";vt.style.fill=GFon}else
+{vb.style.fill=GBoff;vt.textContent="0";vt.style.fill=GFoff}
+}
+
+
+function Set_out(Which,TF){
+let vb=OOid[Which];
+let vt=GGid[Which];
+if(TF)
+{vb.style.fill=YBon ;vt.textContent="1";vt.style.fill=YFon}else
+{vb.style.fill=YBoff;vt.textContent="0";vt.style.fill=YFoff}
+tgq[Which]=TF;
+}
+
+
+function RangeUpdate(){// Called by INPUT range change
+let vk=1*RSid.value;
+if(vk===FlourishChar) MakeAmp(); else MakeArr(); // arr/amp detection.
+
+// Reset the button values, to the new master value.
+for(let i=0;i<8;i++)
+ Set_in(i,vk&pow[i]);
+
+Run_Calc();
+let vq=0;
+for(let i=0;i<8;i++)
+ vq+=tgq[i]*pow[i];
+
+// Display over the outputs
+for(let i=0;i<8;i++)
+ {Set_out(i,tgq[i])}
+
+D1id.innerHTML=vk;D2id.innerHTML=vq; // Decimal
+ASC_report(vk,"1");ASC_report(vq,2); // ASCII
+}
+
+function ASC_report(Lv,Which){
+let code=Lv&255; // Clamp all nonsensical values.
+let top=code>>5; // int(code/32)
+if(code===127) top=0;
+if(top>5) top=5; // Smaller lookup table.
+let newcode=code+offset[top];
+let NC=String.fromCharCode(newcode);
+if(newcode===32) NC="&loz;";
+if(code===127) NC="&Dagger;";
+if(code===255) NC="&Omega;";
+// Push those variables out to the HTML.
+LHid[Which].innerHTML=hint[top];
+let e=ASid[Which];
+e.style.backgroundColor=bkc[top];
+e.style.color=fgc[top];
+e.innerHTML=NC;
+}
+
+
+function Run_Calc(){
+Set_out(3,tgk[2]); // Stage1
+gg1=!tgk[4];ChWire(10,gg1); // Stage2
+gg2=!tgk[3];ChWire(11,gg2);
+gg3=gg1&tgk[1];ChWire(18,gg3);Set_out(1,gg3); // Stage3
+gg4=gg1&!tgk[0];ChWire(12,gg4);
+gg5=gg2&!tgk[2];ChWire(17,gg5);Set_out(2,gg5);// Stage4
+gg6=!(gg2&!gg4);ChWire(19,gg6);Set_out(0,gg6);
+ChWire(16,tgk[0]);Set_out(4,tgk[0]);// New Stage5
+}
+
+
+function Initialise(){
+let d=document;
+// Unhide interactive elements, if user agents can run this script:
+d.getElementById("hide1").style.display="block"; // Interactive controls
+d.getElementById("hide2").style.display="block"; // Allows SVG#circuit
+d.getElementById("hide3").style.display="block"; // datalink-Rel
+
+// Cache common id Refs:
+// (Note: const doesn't work for objects.)
+RSid=d.getElementById("rangeslider");
+AMid=d.getElementById("amp");
+ARid=d.getElementById("arr");
+D1id=d.getElementById("dec1");
+D2id=d.getElementById("dec2");
+G2id=d.getElementById("FlourishGrad");
+CRid=d.getElementById("circuit");
+SZid=d.getElementById("resizeCirB");
+
+for(let i=0;i<20;i++)
+ SFid[i]=d.getElementById("sF"+i);
+
+for(let i=0;i<8;i++){
+NNid[i]=d.getElementById("n"+i);
+FFid[i]=d.getElementById("f"+i);
+OOid[i]=d.getElementById("o"+i);
+GGid[i]=d.getElementById("g"+i);
+}
+
+LHid[1]=d.getElementById("Lhint1");
+LHid[2]=d.getElementById("Lhint2");
+ASid[1]=d.getElementById("asc1");
+ASid[2]=d.getElementById("asc2");
+
+// Intial state of wires + outputs that don't change
+ChWire(14,true);Set_out(6,true);Set_out(4,true);
+
+// Setup the initial state of the input buttons:
+for(let i=0;i<8;i++)
+ {if((StartChar&pow[i])>0) ActIn(i)}   // Space removal test, around the & ::
+
+RSid.value=StartChar;
+RangeUpdate();
+MakeArr();
+
+// From Initialise_db(), from datalink:
+let Cbc,Cbg,Cco,m;
+
+// Cache UL.ul#: Areas of Keys to hide/unhide.
+for(let i=1;i<5;i++){SLid[i]=d.getElementById("ul"+i);BUid[i]=d.getElementById("ss"+i)}
+
+// Cache UL.db children:
+let c=d.getElementById("db").children;
+
+let i=-1;
+for(let e of c){
+i++;DBid[i]=e;
+for(let j=1;j<5;j++){DBnm[j][i]=e.id.charCodeAt(j-1)-97}}
+
+// Now read the palette data fr Keys 1..4
+for(let x=1;x<5;x++){
+c=SLid[x].children;i=-2;
+for(let e of c){
+i++;if(i===-1)continue; // Ignore the first element.
+m=e.id;
+// This part reads + caches the palette data:
+Cbc="#"+m.substring(1,4);
+Cbg="#"+m.substring(4,7);
+Cco="#"+m.substring(7,10);
+BCpe[x][i]=Cbc;BGpe[x][i]=Cbg;COpe[x][i]=Cco;
+// This part includes a later loop which colours all Key-Legends:
+e.style.borderColor=Cbc;e.style.backgroundColor=Cbg;e.style.color=Cco}
+}
+
+Activate_KeyL(1); // Initialise Key1.
+}
+
+
+function Activate_KeyL(Key){// datalink's sole function call
+let PalRef;
+if(CurrButt>0)
+{SLid[CurrButt].style.display="none"; // Hide
+ BUid[CurrButt].style.backgroundColor="#eeb";
+ BUid[CurrButt].style.borderStyle="outset"}
+CurrButt=Key;
+SLid[CurrButt].style.display="block"; // Unhide
+BUid[CurrButt].style.backgroundColor="#fdb";
+BUid[CurrButt].style.borderStyle="inset";
+// All children of {ul id="db"}:
+let i=-1;
+for(let f of DBid){i++;
+PalRef=DBnm[Key][i];
+f.style.borderColor=BCpe[Key][PalRef];
+f.style.backgroundColor=BGpe[Key][PalRef];f.style.color=COpe[Key][PalRef]}
+}
+
+
+function Range_inc(n){
+let v=1*RSid.value;
+v+=n;if(v>255) v=255;
+RSid.value=v;
+RangeUpdate()}
+
+function Range_dec(n){
+let v=1*RSid.value;
+v-=n;if(v<0) v=0;
+RSid.value=v;
+RangeUpdate()}
+
+
+// Flourish animation:
+
+function Flourish(){
+let pos=-2150;
+clearInterval(id_flour);
+id_flour=setInterval(FlourishFrame,5);
+
+function FlourishFrame(){
+if(pos>=-700) {clearInterval(id_flour)} else
+ {pos+=4;G2id.setAttribute("gradientTransform",
+ "translate("+pos+",0) rotate(-45) scale(4)")}
+}}
+
+
+// Circuit resizing animation:
+
+function Enlarge(){
+let pos=Small_size;
+clearInterval(id_cir);
+id_cir=setInterval(EnlargeFrame,5);
+function EnlargeFrame(){
+if(pos>=Large_size){clearInterval(id_cir)} else
+ {pos+=1;CRid.setAttribute("width",pos+"px")}
+}}
+
+function Reduce(){
+let pos=Large_size;
+clearInterval(id_cir);
+id_cir=setInterval(ReduceFrame,5);
+function ReduceFrame(){
+if(pos<=Small_size){clearInterval(id_cir)} else
+ {pos-=1;CRid.setAttribute("width",pos+"px")}
+}}
+
+function ResizeCir(){
+let v=SZid.innerHTML;
+let Sw=(v==="Reduce");
+if(Sw) {Reduce();v="Enlarge"} else {Enlarge();v="Reduce"}
+SZid.innerHTML=v;
+}
+
+
+// Arrow/ampersand functions:
+
+function MakeAmp(){if(isAmp) return;
+isAmp=true;AMid.style.fill="#666";ARid.style.fill="none"}
+
+function MakeArr(){if(!isAmp) return;
+isAmp=false;AMid.style.fill="none";ARid.style.fill="#666"}
+
+function ModIfAmp(){if(isAmp) Flourish()}
+
+</script></head><body onload="Initialise()">
+<header><noscript>As the main point of this CV is to demonstrate a live
+circuit simulator, which doesn't work with javascript unavailable, there
+isn't a way of making it accessible. Consequently, you'd may be better-off
+reading my earlier <A href="http://freedom.is/tech">Technical CV</A>, which
+<I>is</I> WAI-compliant. Aside from the thing being referred to not being
+available, the more up-to-date text in this coding CV should otherwise make
+sense.</noscript>
+<div id="hide1">
+<!--Flexboxes won't work with these, for some reason:-->
+<!--DIV subst 1B-->
+<div class="floats" id="topbox">
+
+<div class="wcv"><!--ASCII I/O:-->
+<div class="hintbox" id="Lhint1"></div>
+<div></div>
+<div class="hintbox" id="Lhint2"></div>
+<div id="sa1" title="The input byte (ASCII)"><div class="output asc" id="asc1"></div></div>
+<div class="vmid">
+<svg viewBox="0 0 283.5 311.84" id="ar1" class="overall">
+<path id="container" onclick="ModIfAmp()" d="m0 311.84 283.5 0 0-311.84-283.5 0 0 311.84z"/>
+<path id="amp" onclick="ModIfAmp()" d="m 140.56,143.12 c 32,-15.2 50.39,-42.41 50.39,-70.41 0,-48.79 -40.79,-66.39 -69.59,-66.39 -41.61,0 -76,28.8 -76,68.8 -0.8,20.8 8,40.8 30.39,64.8 -39.19,18.4 -61.59,44.79 -61.59,82.4 0,51.19 45.59,83.19 88.79,83.19 28.8,0 59.21,-12.8 82.41,-32.8 l 21.59,25.6 62.41,0 -52,-62.39 c 20,-21.6 31.2,-55.21 32,-87.21 l -46.41,0 c 3.21,16 -3.2,36 -16.79,50.41 l -45.6,-56 z m -39.2,29.59 c -32.8,12 -36.8,30.41 -36.8,44 0,31.21 24.8,40 41.6,40 18.4,0 40.79,-12.79 48.79,-20 l -53.59,-64 z m 44.8,-96.79 c 0,13.59 -9.6,28.79 -30.41,35.2 l -11.19,-15.2 c -13.61,-23.21 -13.61,-43.21 17.6,-44 14.4,0 24,7.2 24,24"/>
+<path id="arr" d="m12.89 172.85 0-33.87 192.39 0 0-48.41 65.34 65.35-65.34 65.34 0-48.41z"/>
+</svg>
+</div>
+<div id="sa2" title="The output byte (ASCII)"><div class="output asc" id="asc2"></div></div>
+</div>
+
+</div>
+
+
+<div class="floats" id="suprange">Rangeslider &amp; indicator<BR>
+<input type="range" min="0" max="255" value="0" id="rangeslider"
+ oninput="RangeUpdate()" title="Click &amp; drag on this slider"></div>
+
+
+<div class="floats" id="supbts">
+<div id="buttspace">Coarse &amp; fine inc/dec<BR>
+<button onclick="Range_dec(8)" title="Decrement by 8">--</button><button onclick="Range_dec(1)" title="Decrement by 1">-</button><button onclick="Range_inc(1)" title="Increment by 1">+</button><button onclick="Range_inc(8)" title="Increment by 8">++</button>
+</div>
+</div>
+
+<!--DIV subst 4B-->
+<div class="floats" id="supwdc">Decimal values:<BR>
+<div class="wdc"><!--Decimal I/O:-->
+<div title="Input byte (decimal)"><div class="output dec" id="dec1"></div></div>
+<div class="vmid">
+<svg viewBox="0 0 157 130" width="34px"
+ class="arramp" id="ar2">
+<path class="arrcol" d="m0 48 0 34 92 0 0 48 65-65-65-65 0 48z"/>
+</svg>
+</div>
+<div title="Output byte (decimal)"><div class="output dec" id="dec2"></div></div>
+</div>
+</div>
+
+
+</div><!--END OF hide1-->
+<!--Stuff above--><P class="unfloat floats"><div title="This is a live circuit simulator:
+You can click or tap on the green inputs,
+to toggle them on &amp; off.">
+<svg viewBox="-14.125 -28.25 555.73 469" width="200" id="circuit">
+
+<linearGradient id="FlourishGrad" gradientUnits="userSpaceOnUse"
+ gradientTransform="translate(-2150,0) rotate(-45) scale(4)">
+<stop offset="0"    stop-color="#eeb"/><stop offset="0.36" stop-color="#eeb"/>
+<stop offset="0.38" stop-color="#f00"/><stop offset="0.40" stop-color="#ff0"/>
+<stop offset="0.42" stop-color="#0f0"/><stop offset="0.44" stop-color="#0ff"/>
+<stop offset="0.46" stop-color="#00f"/><stop offset="0.48" stop-color="#f0f"/>
+<stop offset="0.50" stop-color="#f00"/><stop offset="0.52" stop-color="#ff0"/>
+<stop offset="0.54" stop-color="#0f0"/><stop offset="0.56" stop-color="#0ff"/>
+<stop offset="0.58" stop-color="#00f"/><stop offset="0.60" stop-color="#f0f"/>
+<stop offset="0.62" stop-color="#eeb"/><stop offset="1"    stop-color="#eeb"/>
+</linearGradient>
+
+<!--WIRES, JOINS, BRIDGES-->
+<g class="wjb">
+<g id="sF0"><path d="M511 29 v155M241.98 297.57v-44  l154 -154 h115"/>
+ <circle cx="511" cy="99.5" r="3.7"/></g>
+<path d="M313 165v 35 M370 145.92v-60 M441 145.92v-60"/>
+<g id="sF11"><path d="M468.78 297.67v-28.35h-127.58l-28.35-28.35v-113.39M355.61 269.19v28.35"/>
+ <circle cx="355.61" cy="269.32" r="3.7"/></g>
+<g id="sF12"><path d="M497 241 v56.7"/></g>
+<path d="M426.25 255.15v28.35 M341.2 255.15l-28.35 28.35 M383.73 276.41v-21.26"/>
+<g><path d="M28.61 127.69v28.35M15.18 411.69v-255.65h197.7v141.75M171.108 297.673v-28.35h42.52"/>
+ <circle cx="28.61" cy="156.04" r="3.7"/><circle cx="213.63" cy="269.32" r="3.7"/></g>
+<g id="sF18"><path d="M426.2 241v99.23l14.18 14.18v57.7"/></g>
+<path d="M114.41 141.75v28.35 M142.76 141.75v28.35"/>
+<g id="sF7"><path d="M15.18 28.69v42.5M15.178 42.523h28.35v28.35"/>
+ <circle  cx="15.18" cy="42.52" r="3.7"/></g>
+<g id="sF6"><path d="M86.06 29v84.4l28.35 28.35v42.52M86.06 42.52h42.52v28.35"/>
+ <circle  cx="86.06" cy="42.52" r="3.7"/></g>
+<g id="sF5"><path d="M156.93 28.69 v42.5"/></g>
+<g id="sF4"><path d="M227.81 29 v42.5M227.808 42.523h28.35v28.35"/>
+ <circle  cx="227.81" cy="42.52" r="3.7"/></g>
+<g id="sF3"><path d="M298.68 29 v42.5M298.678 42.523h28.352v28.35"/>
+ <circle  cx="298.68" cy="42.52" r="3.7"/></g>
+<g id="sF2"><path d="M369.56 29v212.2M298.56 412.29V297.69L355.26 241.19H383.91V297.69"/>
+ <circle cx="369.56" cy="241.19" r="3.7"/></g>
+<g id="sF1"><path d="M441 29v155.19"/></g>
+<path d="M383.73 155.92h-85.05 M426.26 155.92h28.35"/>
+<g id="sF10"><path d="M412 184 v-29M482.96 184.27v-28.35h-240.98 v-29"/>
+ <circle cx="412" cy="156.04" r="3.7"/></g>
+<g><path d="M142.75 127.58v56.7M157.6 354.2 v58"/></g>
+<g id="sF14"><path d="M86 412v-142.65h56.78v28.32M128.6 241v28.35"/>
+ <circle cx="128.5" cy="269.32" r="3.7"/></g>
+<g id="sF16"><path d="M227.81 354.37v57.7"/></g>
+<g id="sF17"><path d="M370 354 v58"/></g>
+<g id="sF19"><path d="M483 354.3v14.17l28.36 28.35v15"/></g>
+</g>
+
+<!--GATES-->
+<g class="gates" fill="url(#FlourishGrad)">
+<path d="M454.6 297.7v28.3a28.35 28.35 0 1056.7 0v-28.3z"/>
+<circle cx="497" cy="291.24" r="6.46"/><circle cx="483" cy="361" r="6.46"/>
+<path d="M341.3 297.7v28.3a28.35 28.35 0 1056.7 0v-28.3z"/><circle cx="383.7" cy="291.24" r="6.46"/>
+<path d="M199.4 297.7v28.3a28.35 28.35 0 1056.7 0v-28.3z"/><circle cx="213" cy="291.24" r="6.46"/>
+<path d="M128.6 297.7v28.3a28.35 28.35 0 1056.7 0v-28.3z"/>
+<path d="M468.8 184.2v28.3a28.35 28.35 0 1056.7 0v-28.3z"/><circle cx="511" cy="177.7" r="6.46"/>
+<path d="M398.4 184.2v28.3a28.35 28.35 0 1056.7 0v-28.3z"/>
+<path d="M100.3 184.2v28.3a28.35 28.35 0 1056.7 0v-28.3z"/><circle cx="128.5" cy="247.5" r="6.46"/>
+<path d="M284.5 70.9v28.3a28.35 28.35 0 1056.7 0v-28.3z"/><circle cx="312.875" cy="134.3" r="6.46"/>
+<path d="M213.6 70.9v28.3a28.35 28.35 0 1056.7 0v-28.3z"/><circle cx="242" cy="134.3" r="6.46"/>
+<path d="M115.2 70.9v28.3a28.35 28.35 0 1056.7 0v-28.3z"/><circle cx="128.5" cy="64.2" r="6.46"/>
+<path d="M1 70.9v28.3a28.35 28.35 0 1056.7 0v-28.3z"/><circle cx="43.5" cy="64.2" r="6.46"/>
+</g>
+
+<!--Input indicator buttons: New triple=layer more=reliable toggling-->
+<g class="btk">
+<rect id="n7" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="-12.125"/>
+<rect id="n6" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="58.875"/>
+<rect id="n5" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="129.875"/>
+<rect id="n4" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="200.625"/>
+<rect id="n3" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="271.375"/>
+<rect id="n2" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="342.125"/>
+<rect id="n1" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="413.125"/>
+<rect id="n0" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="483.875"/>
+<text id="f7" x="0.938" y="17.538">0</text>
+<text id="f6" x="71.938" y="17.538">0</text>
+<text id="f5" x="142.938" y="17.538">0</text>
+<text id="f4" x="213.688" y="17.538">0</text>
+<text id="f3" x="284.438" y="17.538">0</text>
+<text id="f2" x="355.188" y="17.538">0</text>
+<text id="f1" x="426.188" y="17.538">0</text>
+<text id="f0" x="496.938" y="17.538">0</text>
+<rect id="x7" onclick="ActIn(7)" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="-12.125"/>
+<rect id="x6" onclick="ActIn(6)" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="58.875"/>
+<rect id="x5" onclick="ActIn(5)" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="129.875"/>
+<rect id="x4" onclick="ActIn(4)" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="200.625"/>
+<rect id="x3" onclick="ActIn(3)" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="271.375"/>
+<rect id="x2" onclick="ActIn(2)" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="342.125"/>
+<rect id="x1" onclick="ActIn(1)" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="413.125"/>
+<rect id="x0" onclick="ActIn(0)" width="56.5" height="56.5" rx="9" ry="9" y="-27.25" x="483.875"/>
+</g>
+
+<!--Output indicators-->
+<g class="btq">
+<rect id="o7" width="56.5" height="56.5" rx="9" ry="9" y="382.75" x="-12.125"/>
+<rect id="o6" width="56.5" height="56.5" rx="9" ry="9" y="382.75" x="58.875"/>
+<rect id="o5" width="56.5" height="56.5" rx="9" ry="9" y="382.75" x="129.875"/>
+<rect id="o4" width="56.5" height="56.5" rx="9" ry="9" y="382.75" x="200.625"/>
+<rect id="o3" width="56.5" height="56.5" rx="9" ry="9" y="382.75" x="271.375"/>
+<rect id="o2" width="56.5" height="56.5" rx="9" ry="9" y="382.75" x="342.125"/>
+<rect id="o1" width="56.5" height="56.5" rx="9" ry="9" y="382.75" x="413.125"/>
+<rect id="o0" width="56.5" height="56.5" rx="9" ry="9" y="382.75" x="483.875"/>
+<text id="g7" x="0.9376" y="427.5376">0</text>
+<text id="g6" x="71.9376" y="427.5376">0</text>
+<text id="g5" x="142.9376" y="427.5376">0</text>
+<text id="g4" x="213.6876" y="427.5376">0</text>
+<text id="g3" x="284.4376" y="427.5376">0</text>
+<text id="g2" x="355.1876" y="427.5376">0</text>
+<text id="g1" x="426.1876" y="427.5376">0</text>
+<text id="g0" x="496.9376" y="427.5376">0</text>
+</g>
+
+</svg></div>
+<div id="hide2" class="floats"><button id="resizeCirB" onclick="ResizeCir()"
+ title="Toggle the size of the circuit">Enlarge</button></div>
+<!--Stuff to the side-->
+<h1 class="floats" id="explained">Executive Summary</h1>
+
+<P id="squeeze">My data processing paradigms have come full cycle:<BR> From
+electronics (early computers were also reconfigurable hardware - like a
+flowchart), then learning serial coding, to going beyond processor design
+with flow computing, and using
+<abbr title="Field-Programmable Gate Array">FPGA</abbr>s to code with circuits.
+
+<P>As I don't have access to a dev board nor suitable computer, I've designed
+my own FPGA and <A href="http://freedom.is/svg">extended Boolean algebra</A>
+to approach the problem from the other side. I now run circuit simulations in
+SVG and javascript, making my own framework and software tools: It's turned
+out superior to existing commercial FPGAs.
+
+<P>The <SPAN class="bigbold">Live circuit simulator</SPAN> above/left, pairs
+two ASCII codes, featuring interlinked controls &amp; indicators. It
+demonstrates my logic design and coding skills, as opposed to simply claiming
+I can do it.
+
+<P class="unfloat null"><!--Stuff underneath-->
+
+</header>
+<main>
+
+<section><div><H2 id="contact">Applicant Information</H2>
+
+<TABLE>
+<TR id="space"><TH>Name<TD>Robin Hodson
+<TR><TH>Postal<TD>8 Westbrook Close
+<TR><TH>&nbsp;<TD>Chippenham Wilts
+<TR><TH>&nbsp;<TD>SN14 0DL
+<TR><TH>Tel.<TD>01249 443391
+<TR><TH>mob.<TD>079 0008 4725
+<TR><TH>email<TD>work&#64;freedom&#46;is
+<TR><TH>LinkedIn &amp;c<TD><A href="https://about.me/robin.hodson">about.me/robin.hodson</A>
+</TABLE>
+
+<P>This document is available online at <A href="http://freedom.is/code">freedom.is/code</A>
+<BR>As a backup, it's mirrored at <A href="https://chipshed.org/code">chipshed.org/code</A>
+
+</div></section>
+
+
+<section><div><H2 id="contents">Contents</H2>
+
+<UL class="inline">
+<LI><A href="#explained">Executive Summary</A>
+<LI><A href="#contact">Applicant Information</A>
+<LI><A href="#contents">Contents</A>
+<LI><A href="#you-need-me">What I can do for your business</A>
+<LI><A href="#previous-work">Employment History</A>
+<LI><A href="#education">Education</A>
+<LI><A href="#clubs">Professional Groups</A>
+<LI><A href="#volunteering">Voluntary Work &amp; Personal Projects</A>
+<LI><A href="#rainbow">Diversity</A>
+<LI><A href="#skills-database">Skillset Database</A>
+</UL>
+
+</div></section>
+
+<section><div><H2 id="you-need-me">What I can do for your business</H2>
+
+<P><B>I'm a problem-solver.</B> I write very concise code, which performs
+outside specs, to sensible defaults. I habitually
+<A href="http://freedom.is/code/progress.htm">document my progress</A>, so I
+can track issues.
+
+<P>I have a knack for looking at things and immediately seeing easier ways of
+doing them, particularly in process optimisation and logic/hardware design.
+
+<P>Teamworking with other engineers: They're better at the detail; I'm better
+at the overall plan. If one of them says something isn't possible, I explain
+how it is: So there's a necessary knowledge overlap. Similarly, if I'm
+stumped about some aspect of business, one of them invariably knows a way
+forward.
+
+</div></section>
+
+
+<section><div><H2 id="previous-work">Employment History</H2>
+
+<UL>
+
+<LI>2022:
+Tshirts &amp; Sons<BR>
+Surprisingly enjoyable work pick-pack-folding custom-printed garments. Liked
+process optimisation, which is very similar to logic design.
+
+<LI>2021:
+MOD Corsham<BR>
+&quot;Those flying saucers don't clean themselves, you know...&quot; Dodgy
+cover stories aside, this was a primarily physical role. Unsupervised escort
+pass while waiting for eSC vetting.
+
+</UL>
+</div></section><section><div><!--VISUAL SPLIT--><h3>Employment History (cont'd)</h3>
+<UL>
+
+<LI>2018+:
+<A href="https://www.riscosdev.com/">RISC OS Developments</A><BR>
+Helping with the main Southern exhibitions, and moving the Southwest Show to
+a new central Bristol venue. Also a member of WAUG, manning the charity stand
+at the SW and London Shows, and various Tech and Anglo-French trademark
+contributions.
+
+<LI>2018:
+Super-high achiever, various Tech projects.<BR>
+Fiscal Management, self-employed looking after relatives finances, making
+them 20K richer.
+
+<LI>2010-2011:
+Volunteer remote outworker with Hunch Inc (NYC)<BR>
+Fixed bugs using Python and javascript. Developed the mobile version in php.
+
+</UL>
+</div></section>
+
+
+<section><div><H2 id="education">Education</H2>
+
+<UL>
+
+<LI>2023: Learnt Matlab/Octave, to help someone on an FPGA community group.
+<LI>2022: FPGA/ASIC/VLSI/DSP
+<BR>Bath College - Bath 3D Academy
+<LI>2019-2021: Security clearances: eSC, NPPV3, CTC, BPSS, SIA (all lapsed)
+<LI>2019: SIA Training
+<LI>1982-1988: Hardenhuish School
+<BR>TVEI O-Levels: Robotics, Technology, Maths, Physics.
+<LI>1975+: Autodidact - via Electronics magazines, older engineers,
+generous relatives, practical experimentation, and the town library.
+
+</UL>
+</div></section>
+
+<section><div><H2 id="clubs">Professional Groups</H2>
+
+<DL>
+
+<DT>2023
+<DD>Acting chair, <A href="http://freedom.is/naked">Bristol World Naked Bike
+Ride</A>. Also police and venue liaison.
+<DD>More meetup.com walking groups - getting myself moving, gets my life
+moving.
+<DD>More FPGA/Verilog groups - joined to learn, but found myself answering
+questions.
+
+<DT>2022
+<DD>Bristol WNBR co-ride-leader. Also police liaison, data science, and maps.
+
+<DT>2021
+<DD>Online meeting by <A href="https://rougol.jellybaby.net/meetings/2021/apr.html"
+ title="RISC OS user Group of London">ROUGOL</A>, with Sophie Wilson, bounced
+points off each other, came to several profound conclusions about analogue AI.
+
+<DT>2019
+<DD>Joined <A href="https://phpsw.uk/">php-sw</A>. Much networking, also did
+a lightning talk.
+
+</DL>
+</div></section><section><div><!--VISUAL SPLIT--><h3>Professional Groups (cont'd)</h3>
+<DL>
+
+<DT>2017
+<DD>First chat about FPGAs, with the designer of the Blackice Lattice board.
+<BR>Discussed his design, code verses block diagrams, and whether it's best
+to debug in simulation or live via JTAG.
+
+<DT>2016+
+<DD><A href="https://chipshed.org/">Chippenham Men's Shed</A>, <A href="https://chiphack.chipshed.org/">Chippenham Hackspace</A>
+<BR>Co-founded the shedspace to extend the lease of the office building. The
+hackspace extends the demographic. Recycled a huge banner for zero cost
+advertising, all done by hand with PVC tape.
+
+<DT>2015
+<DD>Swindon People's Assembly, Swindon Borough Council
+<BR>Civlib activity in Swindon, crossing over to council involvement which
+resulted in the old college site being redeveloped into a cultural centre.
+
+</DL>
+</div></section>
+
+
+<section><div><H2 id="volunteering">Voluntary Work &amp; Personal Projects</H2>
+
+<UL>
+
+<LI>2022+:
+Learnt <A href="https://alchitry.com/lucid">Alchitry Lucid</A> (Verilog
+superset and devboard). Published my research online; considering turning it
+into a full-scale <abbr title="Open-Source Hardware">OSH</abbr> FPGA
+community project, on eg Github or Opencores.
+
+<LI>2021+:
+Video editing on mobile.
+
+<LI>2015:
+Storage &amp; sorting space for refugee aid, for Swindon People's Assembly.
+
+<LI>2011:
+Featured in the Wootton Bassett Rocks music video, on bouncy stilts.
+
+<LI>2019:
+Relish Running, as a marshal.
+
+<LI>2019:
+Helped start the Corsham Walk &amp; Talk Group.
+
+</UL>
+</div></section><section><div><!--VISUAL SPLIT--><h3>Voluntary Work (cont'd)</h3>
+<UL>
+
+<LI>1990:
+Built an asynchronous modular parallel processor from scratch, using 40xx
+CMOS on stripboard. It would be called an APU now.
+
+<LI>1988:
+A teacher was impressed so much with my pre-existing PCB skills, he nicked my
+work to demonstrate what could be achieved. I remarked at the time,
+&quot;theft is the sincerest form of flattery&quot;, as an insult to thieves.
+This itself was then nicked by Banksy, who misused it as an excuse to steal
+<SPAN title="Intellectual Property">IP</SPAN>. This taught me you can't
+control how other people regard your work.
+
+</UL>
+</div></section>
+
+<section><div>
+<h2 id="rainbow">Diversity</h2>
+<p>There being a serious shortage of coders and indeed FPGA engineers,
+I've found being open to
+<span class=r1>d</span><span class=r2>i</span><span class=r3>v</span><span
+ class=r4>e</span><span class=r5>r</span><span class=r6>s</span><span
+ class=r7>i</span><span class=r8>t</span><span class=r9>y</span>,
+is only half the battle: You have to go out and find talented disadvantaged
+people, who have no idea they're in demand.
+</div></section>
+
+
+</main>
+<footer>
+<h2 id="skills-database">Skillset Database</h2>
+<p>My skills list, from LinkedIn:
+<ul class="inline" id="db">
+<li id="acba">Digital Electronics
+<li id="aabb" title="Field-Programmable Gate Arrays">FPGAs
+<li id="aabb2">FPGA prototyping
+<li id="aabb3">Verilog
+<li id="aabb4">MATLAB
+<li id="aabb5">GNU Octave
+<li id="acaa2">Boolean Logic
+<li id="acaa">Logic Design
+<li id="acbb">Logic Synthesis
+<li id="acbb2">Flow Computing
+<li id="acbb3" title="High-Performance Computing">hpc
+<li id="bcaa">ARM Assembly
+<li id="bcaa2">Acorn
+<li id="bcaa3">RISC&nbsp;OS
+<li id="bcbb4">Linux
+<li id="bcbb5">C (coding language)
+<li id="bcaa4">BBC BASIC
+<li id="bcba3">6502 Assembly
+<li id="bcbb">MsWindows
+<li id="bcbb2">Microsoft Office
+<li id="bcab3">Data Science
+<li id="bcaa5">Computer Literacy
+<li id="ccab">Web Design
+<li id="ccab2">HTML
+<li id="ccab3">CSS
+<li id="cbab">LAMP
+<li id="cbab2">Apache
+<li id="cbbb3">MySQL
+<li id="cbab4">php
+<li id="cbbb5" title="Content Management Systems">CMS
+<li id="cbab6">Javascript
+<li id="dcab">3D Modelling
+<li id="dbab">Video Editing
+<li id="daac">Blender
+<li id="dacc2">Rhino 3D
+<li id="dcaa" title="Computer-Aided Design">CAD
+<li id="dcab2">Computer animation
+<li id="dcab3">Adobe Photoshop
+<li id="fcab4">Advertising
+<li id="fbbb" title="Powerisers: The ones with giant springs in them">Stilts
+<li id="fbac3">Customer Service
+<li id="fbbb2">Marketing Strategy
+<li id="fbab5">Social Networking
+<li id="eaac" title="enhanced national Security Clearance">eSC Clearance
+<li id="eaac2" title="Ministry of Defence">MOD
+<li id="eaac3" title="Security Industry Authority">SIA
+</ul>
+
+<div class="omit">
+<div id="hide3">
+<p>Click or tap on the Category list button below, to view more data above:
+<ul class="no-bullets">
+
+<li id="sl1"><BUTTON id="ss1" onclick="Activate_KeyL(1)">Subject area</BUTTON>
+<ul id="ul1" class="inline">
+<li id="ky1">Key:
+<li id="a0c5dfe053">Hardware
+<li id="b7c0efd250">Software
+<li id="cc07fde603">Web
+<li id="d60edcf206">Graphics
+<li id="e02ecef035">Security
+<li id="fc50fec620">Other
+</ul>
+
+<li id="sl2"><BUTTON id="ss2" onclick="Activate_KeyL(2)"
+ title="Years of active experience">Experience</BUTTON>
+<ul id="ul2" class="inline">
+<li id="ky2">Key:
+<li id="g846fad113" title="Under five years">&lt;5
+<li id="h909f0f210" title="Five to fifteen years">5..15
+<li id="i30950aecf" title="Over fifteen years">&gt;15
+</ul>
+
+<li id="sl3"><BUTTON id="ss3" onclick="Activate_KeyL(3)">Turnover</BUTTON>
+<ul id="ul3" class="inline">
+<li id="ky3">Key:
+<li id="j500b20fff">Highly Profitable
+<li id="kd00fc2332">Profitable
+<li id="l040185fff">Charity/Voluntary
+</ul>
+
+<li id="sl4"><BUTTON id="ss4" onclick="Activate_KeyL(4)">Tuition</BUTTON>
+<ul id="ul4" class="inline">
+<li id="ky4">Key:
+<li id="m800d46fff">Autodidact as a child
+<li id="n00835bfff">Autodidact as an adult
+<li id="o040261fff">Trained as an adult
+</ul>
+
+</ul>
+</div>
+</div>
+
+</footer>
+</body></html>
