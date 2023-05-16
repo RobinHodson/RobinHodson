@@ -18,7 +18,7 @@ If you want to support my work, please consider buying me a Beer etc 🍻
 
 **Standard sections**
 
-In theory, my pages, including my CV, should be available on <a href="https://robinhodson.github.io/RobinHodson/">robinhodson.github.io/RobinHodson/</A>, now.
+In theory, my pages, including my CV, should be <a href="https://robinhodson.github.io/RobinHodson/">available now</A>.
 <br/>Getting an index page working, took a bit of faffing around though.
 
 <!--
@@ -30,7 +30,7 @@ In theory, my pages, including my CV, should be available on <a href="https://ro
 - 👯 I’m looking to collaborate on getting an in-person OSHW meet-up running. Looks like we *might* have a test on Wednesday 17th May.
 - 🤔 I’m looking for help with getting a Job (ideally logic design, but can do php/javascript/LAMP or 3D stuff).
 - 💬 Ask me about anything that seems out, about these pages.
-- 📫 How to reach me: https://about.me/robin.hodson covers all the main areas.
+- 📫 How to reach me: <a href="https://about.me/robin.hodson">about.me/robin.hodson</a> covers all the main areas.
 - 😄 Pronouns: Oi/you seems to be most popular. Although a close second is, "Sorry, I thought you were a hallucination". 'Not sure how to take that.
-- ⚡ Fun fact: I'm acting chair of the Bristol World Naked Bike Ride, this year.
+- ⚡ Fun fact: I'm acting chair of the <a href="http://wiki.worldnakedbikeride.org/index.php?title=Bristol">Bristol World Naked Bike Ride</a>, this year.
 
