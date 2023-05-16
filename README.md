@@ -29,7 +29,7 @@ In theory, my pages, including my CV, should be <a href="https://robinhodson.git
 
 - 🔭 I’m currently working on finalising my schedule today, getting my github shipshape and ready to accept content.
 - 🌱 I’m currently learning about the foibles of github
-- 👯 I’m looking to collaborate on getting an in-person OSHW meet-up running. Looks like we *might* have a test on Wednesday 17th May.
+- 👯 I’m looking to collaborate on getting an in-person OSHW meet-up running. Looks like we *might* have a test on Wednesday 31st May.
 - 🤔 I’m looking for help with getting a Job (ideally logic design, but can do php/javascript/LAMP or 3D stuff).
 - 💬 Ask me about anything that seems out, about these pages.
 - 📫 How to reach me: <a href="https://about.me/robin.hodson">about.me/robin.hodson</a> covers all the main areas.
