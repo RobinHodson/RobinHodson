@@ -1,5 +1,6 @@
 <h1>Welcome! 👋</h1>
-<a href="https://freedom.is/BIG"><img src="https://img.shields.io/static/v1?labelColor=333&message=Business%20website&color=orange&style=for-the-badge&logo=html5&logoColor=fc8" alt="website"/></a><img src="https://img.shields.io/github/followers/RobinHodson?style=for-the-badge" alt="GitHub followers"><img src="http://hits.dwyl.com/RobinHodson/github-profile-readme.svg" alt="Hits Badge"/> 
+<a href="https://freedom.is/BIG"><img src="https://img.shields.io/static/v1?labelColor=333&message=Business%20website&color=orange&style=for-the-badge&logo=html5&logoColor=fc8" alt="website"/></a><img src="https://img.shields.io/github/followers/RobinHodson?style=for-the-badge" alt="GitHub followers"><a href="https://instagram.com/robin.hodson"><img alt="IG" src="https://img.shields.io/badge/-Instagram-e4405f?style=for-the-badge&logo=Instagram&logoColor=white"/></a><img src="http://hits.dwyl.com/RobinHodson/github-profile-readme.svg" alt="Hits Badge"/> 
+
 
 ![RobinHodson's github stats](https://github-readme-stats.vercel.app/api?username=RobinHodson&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
 
@@ -10,14 +11,12 @@ If you want to support my work, please consider buying me a Beer etc 🍻
 
 **Coding languages &c:**
 
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png"></code>
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png"></code>
-
-**Contact methods:**
-<a href="https://www.linkedin.com/in/robinhodson">
-<img alt="LinkedIN" width="22" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/linkedin.svg" />
-</a>
+<code><img height="27" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/php/php.png" alt="php"></code>
+<code><img height="27" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" alt="python"></code>
+<code><img height="27" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" alt="javascript"></code>
+<code><img height="27" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png" alt="sql"></code>
+<code><img height="27" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="git"></code>
+<code><img height="27" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png" alt="terminal"></code>
 
 **Standard sections**
 
@@ -36,4 +35,3 @@ In theory, my pages, including my CV, should be <a href="https://robinhodson.git
 - 📫 How to reach me: <a href="https://about.me/robin.hodson">about.me/robin.hodson</a> covers all the main areas.
 - 😄 Pronouns: Oi/you seems to be most popular. Although a close second is, "Sorry, I thought you were a hallucination". 'Not sure how to take that.
 - ⚡ Fun fact: I'm acting chair of the <a href="http://wiki.worldnakedbikeride.org/index.php?title=Bristol">Bristol World Naked Bike Ride</a>, this year.
-
