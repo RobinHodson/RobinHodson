@@ -27,11 +27,11 @@ In theory, my pages, including my CV, should be <a href="https://robinhodson.git
 **RobinHodson/RobinHodson** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 -->
 
-- 🔭 I’m currently working on finalising my schedule today, getting my github shipshape and ready to accept content. (Severely interrupted by the original machine I was using to do that, dying on me. The replacement is much faster though.)
-- 🌱 I’m currently learning about the foibles of github, and writing the documentation. I'm restarting/redoing the documentation completely, from a talk I did at php-sw, in March 2024. Now transcribed etc, with shorter talks & updates coming to a venue desperate for speakers near you soon. You can watch me stuttering through <a herf="https://youtu.be/TMfGzMqaWeU">my first talk</a> here.
-- 👯 I’m looking to collaborate on getting an in-person OSHW meet-up running. Looks like we *might* have a test on Wednesday 31st May 2024. (We didn't.)
-- 🤔 I’m looking for help with getting a Job (ideally logic design, but can do php/javascript/LAMP or 3D stuff).
+- 🔭 I’ve got a lot more organised since being diagnosed with, then miraculously cured of Depression, within a short space of time.
+- 🌱 I’m currently writing the documentation. I'm restarting/redoing the documentation completely, from a talk I did at php-sw, in April 2024. Now transcribed etc, with shorter talks & updates coming to a venue desperate for speakers near you soon. You can watch me stuttering through <a href="https://youtu.be/TMfGzMqaWeU">my first talk</a> here. I'll shortly be adding the slides to my transcript, then the video animation; then a full animation of the whole talk. Some slides need correcting, and/or taking out of draft. I aim to add a roadmap, although my AI has recently obsoleted most of its steps.
+- 👯 I’m looking to collaborate on getting an in-person OSHW meet-up running. BOSS set one up in January 2024, but it isn't quite what I planned, so I'll get another one going, when I have a regular income.
+- 🤔 I was looking for help with getting a Job (ideally logic design, but can do php/javascript/LAMP or 3D stuff). This is now much closer to happening.
 - 💬 Ask me about anything that seems out, about these pages.
 - 📫 How to reach me: <a href="https://about.me/robin.hodson">about.me/robin.hodson</a> covers all the main areas.
 - 😄 Pronouns: Oi/you seems to be most popular. Although a close second is, "Sorry, I thought you were a hallucination". 'Not sure how to take that.
-- ⚡ Fun fact: I'm chair of the <a href="http://wiki.worldnakedbikeride.org/index.php?title=Bristol">Bristol World Naked Bike Ride</a>, since 2023.
+- ⚡ Fun fact: I'm chair of the <a href="https://wnbristol.uk/">Bristol World Naked Bike Ride</a>, since 2023. This is driving me slowly bananas.
